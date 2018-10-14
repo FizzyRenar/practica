@@ -26,5 +26,8 @@
     "gulp-sass": "^4.0.1",
     "gulp-scss": "^1.4.0",
     "gulp-sourcemaps": "^2.6.4"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
   }
 }

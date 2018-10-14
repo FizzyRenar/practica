@@ -2,6 +2,8 @@
 @import "partials/mixins";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
 html, body {
   @include clear();
   width: 100%;
@@ -26,6 +28,7 @@ a {
   flex-direction: column;
   width: 100%;
   overflow: hidden;
+  background-color: $main-bg-color;
 }
 
 .first-screen {
@@ -33,4 +36,8 @@ a {
   flex-direction: column;
   flex-grow: 1;
   height: 100vh;
+}
+
+.hide {
+  display: none !important;
 }

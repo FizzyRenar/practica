@@ -1,3 +1,5 @@
+@import "params";
+
 @mixin clear {
   margin:0;
   padding: 0;
@@ -6,4 +8,20 @@
 @mixin clear-list {
   @include clear();
   list-style: none;
+}
+
+@mixin flex-center($dir:column) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin package-color($color:$yellow) {
+  & .item__value {
+    color: $color;
+  }
+  & .tile__cost {
+    border-bottom:3px solid $color;
+  }
 }

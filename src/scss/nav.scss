@@ -10,14 +10,18 @@ $font-color:#fff;
   display: flex;
   justify-content: space-between;
   flex: 0 0 $nav-height;
-  padding: 0 30px;
+  //padding: 0 30px;
   width:100%;
   color: $font-color;
-  background-color: black;
+  background-color: transparent;
   align-items: center;
 
   &__brand {
+    margin-left: 40px;
 
+    img {
+      width: 120px;
+    }
   }
 
   &__menu {

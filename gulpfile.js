@@ -16,7 +16,7 @@ var config = {
         cssName: 'bundle.min.css',
         path: './public'
     },
-    isDev: true
+    isDev: false
 };
 
 gulp.task('scss', function(){
@@ -25,7 +25,7 @@ gulp.task('scss', function(){
         .pipe(scss())
         .pipe(concat(config.output.cssName))
         .pipe(autoprefixer())
-        .pipe(gulpIf(config.isDev, cleanCss()))
+        .pipe(cleanCss())
         .pipe(gulpIf(config.isDev, sourcemaps.write()))
         .pipe(gulp.dest(config.output.path))
         .pipe(browserSync.stream());
@@ -38,7 +38,7 @@ gulp.task('serve', function(){
         }
     });
     gulp.watch(config.paths.scss, ['scss']);
-    gulp.watch(config.paths.html).on('change', browserSync.reload());
+    gulp.watch(config.paths.html).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['scss', 'serve']);
