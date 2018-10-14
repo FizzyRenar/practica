@@ -25,7 +25,7 @@ gulp.task('scss', function(){
         .pipe(scss())
         .pipe(concat(config.output.cssName))
         .pipe(autoprefixer())
-        .pipe(cleanCss())
+        .pipe(gulpIf(!config.isDevelop, cleanCss()))
         .pipe(gulpIf(config.isDev, sourcemaps.write()))
         .pipe(gulp.dest(config.output.path))
         .pipe(browserSync.stream());
